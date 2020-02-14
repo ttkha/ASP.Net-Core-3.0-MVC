@@ -30,8 +30,10 @@
                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                         @*<li><a asp-controller="Pie" asp-action="List">Pies</a></li>*@
                         @await Component.InvokeAsync("ShoppingCartSummary")
-                        @await Component.InvokeAsync("CategoryMenu")
                         <li><a asp-controller="Contact" asp-action="Index">About</a></li>
+                        @await Component.InvokeAsync("CategoryMenu")
+                        <partial name="_LoginPartial" />
+
                     </ul>
                 </div>
             </div>
@@ -48,5 +50,6 @@
             </div>
         </div>
     </div>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
